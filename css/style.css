@@ -1,0 +1,775 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap');
+.mea-culpa-regular {
+  font-family: "Mea Culpa", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+body{
+	font-family: Montserrat medium ; font-size: 16px
+}
+.ancizar-serif {
+  font-family: "Ancizar Serif", serif;
+  font-optical-sizing: 700px;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 27px;
+}
+section{
+	width: 100%; min-height: 800px;
+   
+}
+.navbar .navbar-brand{
+	color: #2350DF
+}
+.navbar .navbar-brand:hover{
+	color: darkviolet
+}
+@media (max-width: 480px){
+	.navbar {
+		display: flex; justify-content: center; align-items: center
+	}
+}
+.navbar {
+    background-color: whitesmoke; /* Giữ màu riêng của navbar */
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Thêm bóng */
+}
+
+.dark-mode nav {
+    background-color: #1E1E1E !important;
+    color: white !important;
+}
+
+
+body.dark-mode {
+    background-color: #1E1E1E;
+    color: white;
+}
+
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #D4A849;
+    transition: background-color 0.4s;
+    border-radius: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 60px; /* Tăng chiều rộng */
+    height: 30px; /* Tăng chiều cao */
+    padding: 2px; /* Thêm khoảng cách bên trong */
+}
+
+
+
+/* Biểu tượng mặt trời & mặt trăng */
+.icon {
+    font-size: 20px;
+    position: absolute;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* Mặt trời */
+.sun {
+    left: 2px; bottom: 1px;
+    color: yellow;
+    opacity: 1;
+}
+
+/* Mặt trăng */
+.moon {
+	left: 1px; bottom: 1px;
+    color: white;
+    opacity: 0; /* Mặt trăng ẩn ban đầu */
+}
+
+/* Khi bật chế độ tối */
+input:checked + .slider {
+    justify-content: flex-end;
+	background-color: darkblue;
+}
+
+/* Hiệu ứng chuyển đổi mặt trời thành mặt trăng */
+input:checked + .slider .sun {
+	background-color: darkblue
+    transform: translateX(50px);
+    opacity: 0; /* Mặt trời dần biến mất */
+}
+
+input:checked + .slider .moon {
+    transform: translateX(30px);
+    opacity: 1; /* Mặt trăng dần xuất hiện */
+}
+
+.skill-row {
+    margin-bottom: 10px; /* Điều chỉnh khoảng cách giữa các hàng */
+}
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Khoảng cách giữa tên kỹ năng và thanh progress */
+}
+.skill-name {
+    margin-bottom: 5px;
+	margin-right: 3px/* Tạo khoảng cách giữa tên kỹ năng và thanh progress */
+}
+.progress-bar {
+    background-color: #ff5733;
+	width: 0; /* Ban đầu ẩn */
+    opacity: 0; /* Giữ thanh ẩn lúc đầu */
+    transform: translateX(-50px); /* Đẩy sang trái */
+    transition: width 1s ease-in-out, opacity 0.5s ease-in-out, transform 0.7s ease-in-out;/* Đổi màu thanh tiến trình */
+}
+.dreamweaver-bar {
+    background-color: purple !important;
+}
+/* Khi cuộn đến */
+.progress-bar.visible {
+    opacity: 1; /* Hiện thanh */
+    width: var(--target-width); /* Dùng biến động để giữ giá trị đúng */
+    transform: translateX(0); /* Trượt vào */
+}
+.figma-bar{
+	background-color: palevioletred !important;
+}
+.aftereffects-bar{
+	background-color: mediumblue !important;
+}
+.premiere-bar{
+	background-color: #5C14B5 !important;
+}
+/*Phan timeline*/
+@font-face {
+  font-family: 'ESL Legend';
+  src: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Light.eot);
+  src: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Light.eot#iefix) format("embedded-opentype"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Light.woff2) format("woff2"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Light.woff) format("woff"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Light.ttf) format("truetype"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Light.svg#eicon) format("svg");
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'ESL Legend';
+  src: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Regular.eot);
+  src: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Regular.eot#iefix) format("embedded-opentype"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Regular.woff2) format("woff2"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Regular.woff) format("woff"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Regular.ttf) format("truetype"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Regular.svg#eicon) format("svg");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'ESL Legend';
+  src: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Bold.eot);
+  src: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Bold.eot#iefix) format("embedded-opentype"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Bold.woff2) format("woff2"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Bold.woff) format("woff"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Bold.ttf) format("truetype"),
+  url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/fonts/legend/ESLLegend-Bold.svg#eicon) format("svg");
+  font-style: normal;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+.ag-format-container {
+  width: 1160px;
+  margin: 0 auto;
+
+  position: relative;
+}
+
+.ag-timeline-block {
+  padding: 300px 0;
+}
+.ag-timeline_title-box {
+  padding: 0 0 30px;
+
+  text-align: center;
+}
+.ag-timeline_tagline {
+  font-size: 40px;
+  color: rgb(84, 89, 95);
+}
+.ag-timeline_title {
+  background-image: url(https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  background-size: cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-fill-color: transparent;
+  color: transparent;
+
+  font-size: 80px;
+}
+
+.ag-timeline_item {
+  margin: 0 0 50px;
+
+  position: relative;
+}
+.ag-timeline_item:nth-child(2n) {
+  text-align: right;
+}
+
+.ag-timeline {
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+
+  position: relative;
+}
+.ag-timeline_line {
+  width: 2px;
+  background-color: #393935;
+
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  bottom: 0;
+
+  overflow: hidden;
+
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.ag-timeline_line-progress {
+  width: 100%;
+  height: 20%;
+  background-color: #FF0;
+}
+
+.ag-timeline-card_box {
+  padding: 0 0 20px 50%;
+}
+.ag-timeline_item:nth-child(2n) .ag-timeline-card_box {
+  padding: 0 50% 20px 0;
+}
+.ag-timeline-card_point-box {
+  display: inline-block;
+  margin: 0 14px 0 -24px;
+}
+.ag-timeline_item:nth-child(2n) .ag-timeline-card_point-box {
+  margin: 0 -28px 0 14px;
+}
+.ag-timeline-card_point {
+  height: 50px;
+  line-height: 50px;
+  width: 50px;
+  border: 3px solid #FF0;
+  background-color: darkblue;
+
+  
+  font-family: 'ESL Legend', sans-serif;
+  font-size: 0px;
+  color: #FFF;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center
+}
+.js-ag-active .ag-timeline-card_point {
+  color: darkblue;
+  background-color: darkblue;
+}
+.ag-timeline-card_meta-box {
+  display: inline-block;
+  
+  
+}
+.ag-timeline-card_meta {
+
+  font-family: Constantia, 'Lucida Bright', 'DejaVu Serif', Georgia, 'serif'sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #1414A3;
+}
+.ag-timeline-card_item {
+  display: inline-block;
+  width: 45%;
+  margin: -77px 0 0;
+  background-color: darkblue;
+
+  opacity: 0;
+
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+
+  -webkit-box-shadow: 0 0 0 0 rgba(0,0,0,.5);
+  -moz-box-shadow: 0 0 0 0 rgba(0,0,0,.5);
+  -o-box-shadow: 0 0 0 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 0 0 rgba(0,0,0,.5);
+
+  -webkit-transition: -webkit-transform .5s, opacity .5s;
+  -moz-transition: -moz-transform .5s, opacity .5s;
+  -o-transition: -o-transform .5s, opacity .5s;
+  transition: transform .5s, opacity .5s;
+
+  position: relative;
+}
+.ag-timeline_item:nth-child(2n+1) .ag-timeline-card_item {
+  -webkit-transform: translateX(-200%);
+  -moz-transform: translateX(-200%);
+  -ms-transform: translateX(-200%);
+  -o-transform: translateX(-200%);
+  transform: translateX(-200%);
+}
+.ag-timeline_item:nth-child(2n) .ag-timeline-card_item {
+  -webkit-transform: translateX(200%);
+  -moz-transform: translateX(200%);
+  -ms-transform: translateX(200%);
+  -o-transform: translateX(200%);
+  transform: translateX(200%);
+}
+.js-ag-active.ag-timeline_item:nth-child(2n+1) .ag-timeline-card_item,
+.js-ag-active.ag-timeline_item:nth-child(2n) .ag-timeline-card_item {
+  opacity: 1;
+
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+.ag-timeline-card_arrow {
+  height: 18px;
+  width: 18px;
+  margin-top: 20px;
+  background-color: #FF0;
+
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.ag-timeline_item:nth-child(2n+1) .ag-timeline-card_arrow {
+  margin-left: calc(-18px / 2);
+  margin-right: calc(-18px / 2);
+}
+.ag-timeline_item:nth-child(2n) .ag-timeline-card_arrow {
+  margin-left: -10px;
+
+  right: auto;
+  left: 0;
+}
+.ag-timeline-card_img {
+  width: 100%;
+}
+.ag-timeline-card_info {
+  padding: 20px 30px;
+}
+.ag-timeline-card_title {
+  display: none;
+  margin: 10px 0 0;
+
+  font-family: 'ESL Legend', sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  color: #FF0;
+}
+.ag-timeline-card_desc {
+  line-height: 1.45;
+
+  font-size: 16px;
+  color: #FFF;
+}
+
+
+@media only screen and (max-width: 979px) {
+  .ag-timeline_line {
+    left: 30px;
+  }
+
+  .ag-timeline_item:nth-child(2n) {
+    text-align: left;
+  }
+
+  .ag-timeline-card_box,
+  .ag-timeline_item:nth-child(2n) .ag-timeline-card_box {
+    padding: 0 0 20px;
+  }
+  .ag-timeline-card_meta-box {
+    display: none;
+	margin-bottom: 20px;
+  }
+  .ag-timeline-card_point-box,
+  .ag-timeline_item:nth-child(2n) .ag-timeline-card_point-box {
+    margin: 0 0 0 8px;
+  }
+  .ag-timeline-card_point {
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+  }
+  .ag-timeline-card_item {
+    width: auto;
+    margin: -65px 0 0 75px
+  }
+  .ag-timeline_item:nth-child(2n+1) .ag-timeline-card_item,
+  .ag-timeline_item:nth-child(2n) .ag-timeline-card_item {
+    -webkit-transform: translateX(200%);
+    -moz-transform: translateX(200%);
+    -ms-transform: translateX(200%);
+    -o-transform: translateX(200%);
+    transform: translateX(200%);
+  }
+  .ag-timeline_item:nth-child(2n+1) .ag-timeline-card_arrow {
+    right: auto;
+    left: 0;
+  }
+  .ag-timeline-card_title {
+    display: block;
+  }
+  .ag-timeline-card_arrow {
+    margin-top: 12px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+
+  .ag-timeline-card_img {
+    height: auto;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .ag-timeline_title {
+    font-size: 60px;
+  }
+
+  .ag-timeline-card_info {
+    padding: 10px 15px;
+  }
+  .ag-timeline-card_desc {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .ag-format-container {
+    width: 750px;
+  }
+
+}
+
+@media (min-width: 980px) and (max-width: 1161px) {
+  .ag-format-container {
+    width: 960px;
+  }
+
+}
+.short-space {
+  margin-bottom:-150px;  /* Giảm khoảng cách bên dưới */
+  margin-top: -250px;     /* Giảm khoảng cách bên trên */
+}
+
+.video-lightbox video {
+  pointer-events: none;
+}
+/* ===== MAIN CONTAINER (Card) ===== */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  /* Sử dụng aspect-ratio để duy trì tỉ lệ, thay vì đặt height cố định */
+  aspect-ratio: 600 / 550;
+  background: lightgrey;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: 2px solid #fff;
+  transition: transform 1s ease-in-out;
+  padding: auto 0 90px 0;
+}
+
+/* ===== BACKGROUND ===== */
+.background {
+  position: absolute;
+  inset: 0;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  z-index: 1;
+}
+
+/* ===== LOGO ===== */
+/* Sửa lại vị trí để logo luôn nằm trong vùng bo góc và thêm z-index cao hơn để luôn nằm trên các layer khác */
+.logo {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: translate(0, 0);
+  transition: transform 0.6s ease-in-out, letter-spacing 0.6s ease-in-out;
+  font-size: 1.875rem; /* ~30px */
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 3px;
+  z-index: 3;
+}
+
+/* Nếu logo có SVG bên trong, đảm bảo kích thước và màu sắc phù hợp */
+.logo .logo-svg {
+  fill: white;
+  width: 30px;
+  height: 30px;
+}
+
+/* ===== ICON ===== */
+/* Đảm bảo tên class cho icon nhất quán (đã đổi từ .icon sang .iconn) */
+.iconn {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+}
+
+.iconn .svg {
+  fill: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  transition: fill 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+/* ===== BOXES ===== */
+/* Áp dụng cho tất cả các box bên trong card */
+.box {
+  position: absolute;
+  padding: 10px;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.389);
+  border-top: 2px solid #fff;
+  border-right: 1px solid #fff;
+  /* Sử dụng phần trăm cho border-radius giúp tạo hiệu ứng cong tự nhiên */
+  border-radius: 10% 13% 42% 0% / 10% 12% 75% 0%;
+  box-shadow: rgba(100, 100, 111, 0.364) -7px 7px 29px 0px;
+  transform-origin: bottom left;
+  transition: all 1s ease-in-out;
+  z-index: 2;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Khi hover vào box, thay đổi màu svg bên trong (sử dụng class .iconn đã sửa) */
+.box:hover .svg {
+  fill: white;
+}
+
+/* Box thứ 1 */
+.box1 {
+  width: 90%;
+  height: 90%;
+  bottom: -90%;
+  left: -90%;
+}
+
+.box1::before {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #ff53d4 60%, #62c2fe 90%);
+}
+
+.box1:hover::before {
+  opacity: 1;
+}
+
+.box1:hover .iconn .svg {
+  filter: drop-shadow(0 0 5px white);
+}
+
+/* Box thứ 2 */
+.box2 {
+  width: 70%;
+  height: 70%;
+  bottom: -70%;
+  left: -70%;
+  transition-delay: 0.2s;
+}
+
+.box2::before {
+  background: radial-gradient(circle at 30% 107%, #91e9ff 0%, #00ACEE 90%);
+}
+
+.box2:hover::before {
+  opacity: 1;
+}
+
+.box2:hover .iconn .svg {
+  filter: drop-shadow(0 0 5px white);
+}
+
+/* Box thứ 3 */
+.box3 {
+  width: 50%;
+  height: 50%;
+  bottom: -50%;
+  left: -50%;
+  transition-delay: 0.4s;
+}
+
+.box3::before {
+  background: radial-gradient(circle at 30% 107%, #969fff 0%, #b349ff 90%);
+}
+
+.box3:hover::before {
+  opacity: 1;
+}
+
+.box3:hover .iconn .svg {
+  filter: drop-shadow(0 0 5px white);
+}
+
+/* Box thứ 4 */
+.box4 {
+  width: 30%;
+  height: 30%;
+  bottom: -30%;
+  left: -30%;
+  transition-delay: 0.6s;
+}
+
+.box4::before {
+  background: radial-gradient(circle at 30% 107%, #969fff 0%, #b349ff 90%);
+}
+
+.box4:hover::before {
+  opacity: 1;
+}
+
+.box4:hover .iconn .svg {
+  filter: drop-shadow(0 0 5px white);
+}
+
+/* Box thứ 5 (nếu có thể sử dụng cho hiệu ứng) */
+.box5 {
+  width: 10%;
+  height: 10%;
+  bottom: -10%;
+  left: -10%;
+  transition-delay: 0.6s;
+}
+
+/* ===== HIỆU ỨNG HOVER ===== */
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Giữ vị trí các box gần cạnh biên khi hover */
+.card:hover .box {
+  bottom: -1px;
+  left: -1px;
+}
+
+/* 
+  Đối với hiệu ứng di chuyển của logo khi hover, 
+  ta áp dụng 2 mức: 
+  - Trên màn hình nhỏ: di chuyển nhẹ giúp không tràn.
+  - Trên desktop: hiệu ứng mạnh hơn (theo yêu cầu ban đầu).
+*/
+.card:hover .logo {
+  transform: translate(20px, -20px);
+  letter-spacing: 0;
+}
+
+@media (min-width: 769px) {
+  .card:hover .logo {
+    transform: translate(70px, -52px);
+  }
+}
+
+/* ===== MEDIA QUERIES (Responsive) ===== */
+@media (max-width: 768px) {
+  .card {
+    border-radius: 30px;
+  }
+  .logo {
+    font-size: calc(16px + 1vw);
+    top: 5%;
+    left: 5%;
+    letter-spacing: 2px;
+  }
+  .iconn {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
+
+  .btn-submit {
+  background-color: #00008b;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: lighter;
+  transition: all 0.3s ease;
+}
+
+/* Hover tăng chiều cao */
+.btn-submit:hover {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.offset-center {
+  transform: none; /* mặc định không dịch */
+}
+
+@media (min-width: 768px) {
+  .offset-center {
+    transform: translateX(70px); /* chỉ áp dụng khi màn hình đủ rộng */
+  }
+}
+
+
+
